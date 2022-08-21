@@ -21,7 +21,6 @@ while($row = mysqli_fetch_array($result)) {
 }
 $_SESSION["name"] = $name;
 $_SESSION["email"] = $email;
-$_SESSION["key"]="ravi7892517729";
 header("location:account.php?q=1");
 }
 else
