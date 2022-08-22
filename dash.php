@@ -100,7 +100,7 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
 
 $result = mysqli_query($con,"SELECT * FROM quiz ORDER BY date DESC") or die('Error');
 echo  '<div class="panel"><div class="table-responsive"><table class="table table-striped title1">
-<tr><td><b>S.N.</b></td><td><b>Topic</b></td><td><b>Total question</b></td><td><b>Marks</b></td><td><b>Time limit</b></td><td><b>Delete</b></td></td></tr>';
+<tr><td><b>S.N.</b></td><td><b>Topic</b></td><td><b>Total question</b></td><td><b>Marks</b></td><td><b>Time limit</b></td><td><b>Delete</b></td></td><td><b>Edit</b></td></tr>';
 $c=1;
 while($row = mysqli_fetch_array($result)) {
 	$title = $row['title'];
@@ -112,7 +112,9 @@ $q12=mysqli_query($con,"SELECT score FROM history WHERE eid='$eid' AND email='$e
 $rowcount=mysqli_num_rows($q12);	
 if($rowcount == 0){
 	echo '<tr><td>'.$c++.'</td><td>'.$title.'</td><td>'.$total.'</td><td>'.$sahi*$total.'</td><td>'.$time.'&nbsp;min</td>
-  <td> &nbsp;&nbsp;&nbsp;<b><a href= "update.php?q=rmquiz&eid='.$eid.'"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;<span class="title1"></span></a></b></td><tr>';
+  <td>&nbsp;&nbsp;&nbsp; <b><a href="update.php?q=rmquiz&eid='.$eid.'"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;<span class="title1"></span></a></b></td> 
+  <td>&nbsp;&nbsp;&nbsp; <b><a href="dash.php?q=6"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;<span class="title1"></span></a></b></td><tr>';';
+
 	// <td><b><a href="account.php?q=quiz&step=2&eid='.$eid.'&n=1&t='.$total.'" class="pull-right btn sub1" style="margin:0px;background:#99cc32"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>&nbsp;<span class="title1"><b>Start</b></span></a></b></td></tr>';
 }
 else
@@ -222,6 +224,40 @@ echo '<div class="panel"<a title="Back to Archive" href="update.php?q1=2"><b><sp
 }?>
 <!--Feedback reading portion closed-->
 
+<!-- edit quiz  -->
+
+<?php
+if (@$_GET['q']==6 && !(@$_GET['step'])){
+  $res = mysqli_query($con," SELECT * FROM quiz") or die('Error');
+  while ($row=mysql_fetch_array($res)){
+    $title = $row['title'];
+	  $total = $row['total'];
+	  $sahi = $row['sahi'];
+    $time = $row['time'];
+	  $eid = $row['eid'];
+    $datet =$row['date'];
+    $intro = $row['intro']; 
+    $tag = $row['tag'];
+    echo '
+    <div class ="row">
+      <span class="title1" style="margin-left:40%;font-size:30px;"><b>Edit Quiz Details</b></span><br /><br />
+      <div class="col-md-3"></div><div class="col-md-6">
+      <form class="form-horizontal title1" name="form" action="update.php?q=eaddquiz&eid='.$eid.'"  method="POST">
+      <fieldset>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-12 control-label" for="name"></label>  
+            <div class="col-md-12">
+              <labe id="name" name="name" placeholder='.$title.' class="form-control input-md">
+
+          </div>
+        </div>
+      </fieldset>    
+      ';
+    }
+  }
+
+?>
 <!--add quiz start-->
 <?php
 if(@$_GET['q']==4 && !(@$_GET['step']) ) {
