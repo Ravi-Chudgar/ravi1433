@@ -195,7 +195,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
         <p>
 		<div class="row">
 		<div class="col-md-4">
-		 <!-- <img src="image/CAM00121.jpg" width=100 height=100 alt="Sunny Prakash Tiwari" class="img-rounded"> -->
+		 
 		 </div>
 		 <div class="col-md-5">
      <h4 style="font-family:'typo' ">RAVI CHUDGAR</h4>
@@ -215,14 +215,14 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" style="font-family:'typo' "><span style="color:orange">Developers</span></h4>
+        <h4 class="modal-title" style="font-family:'typo' "><span style="color:orange">ABOUT US</span></h4>
       </div>
 	  
       <div class="modal-body">
         <p>
 		<div class="row">
 		<div class="col-md-4">
-		 <!-- <img src="image/CAM00121.jpg" width=100 height=100 alt="RAVI CHUDGAR" class="img-rounded"> -->
+		
 		 </div>
 		 <div class="col-md-5">
      <h4 style="font-family:'typo' ">RAVI PRADIPBHAI CHUDGAR</h4>

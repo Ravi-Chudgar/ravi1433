@@ -181,7 +181,7 @@ echo '<tr style="color:#66CCFF"><td>Total Questions</td><td>'.$qa.'</td></tr>
 	  <tr style="color:red"><td>Wrong Answer&nbsp;<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></td><td>'.$w.'</td></tr>
 	  <tr style="color:#66CCFF"><td>Score&nbsp;<span class="glyphicon glyphicon-star" aria-hidden="true"></span></td><td>'.$s.'</td></tr>';
 }
-$q=mysqli_query($con,"SELECT * FROM rank WHERE  email='$email' " )or die('Error157');
+$q=mysqli_query($con,"SELECT * FROM ranking WHERE  email='$email' " )or die('Error157');
 while($row=mysqli_fetch_array($q) )
 {
 $s=$row['score'];
@@ -272,7 +272,7 @@ echo '</table></div></div>';}
         <p>
 		<div class="row">
 		<div class="col-md-4">
-		 <!-- <img src="image/CAM00121.jpg" width=100 height=100 alt="RAVI CHUDGAR" class="img-rounded"> -->
+		 
 		 </div>
 		 <div class="col-md-5">
      <h4 style="font-family:'typo' ">RAVI PRADIPBHAI CHUDGAR</h4>
@@ -299,7 +299,7 @@ echo '</table></div></div>';}
         <p>
 		<div class="row">
 		<div class="col-md-4">
-		 <!-- <img src="image/CAM00121.jpg" width=100 height=100 alt="Sunny Prakash Tiwari" class="img-rounded"> -->
+		
 		 </div>
 		 <div class="col-md-5">
 		
